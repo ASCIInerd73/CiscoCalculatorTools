@@ -10,6 +10,8 @@ function addToForm() {
      form = document.getElementById("inputTable");
      num = form.getChildren()[0].getChildren().length;
      form.getChildren()[0].innerHtml += "<tr><td><p>Vlan Number:</p><input name=\"Vlan"+num+"Number\" type=\"number\"></td><td><p>Vlan Name:</p><input name=\"Vlan"+num+"Name\"></td></tr>";
+     
+     return false;
 }
 </script>
 </head>
@@ -18,6 +20,6 @@ function addToForm() {
 <h1>Vlan Naming Expeditor</h1> 
 <form method="POST" validate="return generate();"><table id="inputTable" border="none">
      <tr><td><p>Vlan Number:</p><input name="Vlan01Number" type="number"></td><td><p>Vlan Name:</p><input name="Vlan01Name"></td></tr>
-     <button name="AddMore" id="AddMoreButton" onClick="addToForm()">More</button>
      </table></form>
+<button name="AddMore" id="AddMoreButton" onClick="return addToForm();">More</button>
 </body>
